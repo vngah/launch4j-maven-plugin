@@ -80,10 +80,10 @@ public class VersionInfo implements IValidatable {
 		Validator.checkTrue(!internalName.endsWith(".exe"), "versionInfo.internalName",
 				Messages.getString("VersionInfo.internal.name.not.exe"));
 		Validator.checkString(originalFilename, 50, "versionInfo.originalFilename",
-				Messages.getString("VersionInfo.original.filename"));
+				Messages.getString("VersionInfo.original.filename"));       /*
 		Validator.checkTrue(originalFilename.endsWith(".exe"),
 				"versionInfo.originalFilename",
-				Messages.getString("VersionInfo.original.filename.exe"));
+				Messages.getString("VersionInfo.original.filename.exe")); */
 	}
 
 	public String getCompanyName() {

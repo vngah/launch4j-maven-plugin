@@ -103,8 +103,7 @@ public class Config implements IValidatable {
 	private Msg	messages;
 
 	public void checkInvariants() {
-		Validator.checkTrue(outfile != null && outfile.getPath().endsWith(".exe"),
-				"outfile", Messages.getString("Config.specify.output.exe"));
+
 		if (dontWrapJar) {
 			if (jar != null && !jar.getPath().equals("")) {
 				Validator.checkRelativeWinPath(jar.getPath(), "jar",
