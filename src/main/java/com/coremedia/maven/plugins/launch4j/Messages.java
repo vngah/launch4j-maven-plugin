@@ -16,22 +16,35 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package com.akathist.maven.plugins.launch4j;
+package com.coremedia.maven.plugins.launch4j;
 
-public class MavenLog extends net.sf.launch4j.Log {
 
-	org.apache.maven.plugin.logging.Log _log;
+/**
+ * Details about messages you can pass.
+ */
+public class Messages {
 
-	public MavenLog(org.apache.maven.plugin.logging.Log log) {
-		_log = log;
-	}
+	String startupErr;
 
-	public void clear() {
-		_log.info("");
-	}
+	String bundledJreErr;
 
-	public void append(String line) {
-		_log.info("launch4j: " + line);
+	String jreVersionErr;
+	
+	String launcherErr;
+	
+	String instanceAlreadyExistsMsg;
+
+
+	net.sf.launch4j.config.Msg toL4j() {
+		net.sf.launch4j.config.Msg ret = new net.sf.launch4j.config.Msg();
+
+		ret.setStartupErr(startupErr);
+		ret.setBundledJreErr(bundledJreErr);
+		ret.setJreVersionErr(jreVersionErr);
+		ret.setLauncherErr(launcherErr);
+		ret.setInstanceAlreadyExistsMsg(instanceAlreadyExistsMsg);
+
+		return ret;
 	}
 
 }
